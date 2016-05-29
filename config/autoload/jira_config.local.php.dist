@@ -1,0 +1,8 @@
+<?php
+
+return [
+    'jira_config' => [
+        'auth' => ['user' => 'your JIRA username (not email)', 'password' => 'password'],
+        'base_uri' => 'https://$yourJiraInstance.atlassian.net/',
+    ],
+];

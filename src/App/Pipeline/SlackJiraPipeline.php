@@ -2,6 +2,7 @@
 
 namespace App\Pipeline;
 
+use App\Service\Jira\JiraShowIssueCommand;
 use App\Validator\Slack\ParseSlackJiraInput;
 use App\Validator\Slack\ValidateSlackToken;
 use App\Validator\ValidateBody;
@@ -16,6 +17,7 @@ class SlackJiraPipeline
         $pipeline->pipe($container->get(ValidateBody::class));
         $pipeline->pipe($container->get(ValidateSlackToken::class));
         $pipeline->pipe($container->get(ParseSlackJiraInput::class));
+        $pipeline->pipe($container->get(JiraShowIssueCommand::class));
 
         return $pipeline;
     }
