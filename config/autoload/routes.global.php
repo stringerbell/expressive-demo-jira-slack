@@ -1,5 +1,7 @@
 <?php
 
+use App\Pipeline\SlackJiraPipeline;
+
 return [
     'dependencies' => [
         'invokables' => [
@@ -23,6 +25,12 @@ return [
             'path' => '/api/ping',
             'middleware' => App\Action\PingAction::class,
             'allowed_methods' => ['GET'],
+        ],
+        [
+            'name' => '/slack_jira',
+            'path' => '/slack_jira',
+            'middleware' => [SlackJiraPipeline::class],
+            'allowed_methods' => ['POST'],
         ],
     ],
 ];
