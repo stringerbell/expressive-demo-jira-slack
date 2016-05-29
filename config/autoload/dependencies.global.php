@@ -4,6 +4,8 @@ use App\Client\SlackClient;
 use App\Pipeline\SlackJiraPipeline;
 use App\Service\Jira\JiraShowIssueCommand;
 use App\Service\Jira\JiraShowIssueCommandFactory;
+use App\Service\Slack\SendMessageToSlackUserViaResponseUrl;
+use App\Service\Slack\SendMessageToSlackUserViaResponseUrlFactory;
 use App\Validator\Slack\ParseSlackJiraInput;
 use App\Validator\Slack\ParseSlackJiraInputFactory;
 use App\Validator\Slack\ValidateSlackToken;
@@ -28,14 +30,15 @@ return [
         ],
         // Use 'factories' for services provided by callbacks/factory classes.
         'factories'  => [
-            Application::class          => ApplicationFactory::class,
-            Helper\UrlHelper::class     => Helper\UrlHelperFactory::class,
-            SlackJiraPipeline::class    => SlackJiraPipeline::class,
-            ValidateSlackToken::class   => ValidateSlackTokenFactory::class,
-            ParseSlackJiraInput::class  => ParseSlackJiraInputFactory::class,
-            SlackClient::class          => SlackClient::class,
-            JiraClient::class           => JiraClient::class,
-            JiraShowIssueCommand::class => JiraShowIssueCommandFactory::class,
+            Application::class                          => ApplicationFactory::class,
+            Helper\UrlHelper::class                     => Helper\UrlHelperFactory::class,
+            SlackJiraPipeline::class                    => SlackJiraPipeline::class,
+            ValidateSlackToken::class                   => ValidateSlackTokenFactory::class,
+            ParseSlackJiraInput::class                  => ParseSlackJiraInputFactory::class,
+            SlackClient::class                          => SlackClient::class,
+            JiraClient::class                           => JiraClient::class,
+            JiraShowIssueCommand::class                 => JiraShowIssueCommandFactory::class,
+            SendMessageToSlackUserViaResponseUrl::class => SendMessageToSlackUserViaResponseUrlFactory::class,
         ],
     ],
 ];
