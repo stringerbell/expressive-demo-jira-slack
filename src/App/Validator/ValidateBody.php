@@ -14,6 +14,7 @@ class ValidateBody
         if (!$body) {
             throw new InvalidArgumentException("Invalid Body");
         }
+
         return $next($request, $response);
     }
 }
