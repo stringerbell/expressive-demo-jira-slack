@@ -1,0 +1,9 @@
+<?php
+
+return [
+    'slack_config' => [
+        'tokens' => [
+            '/slack_jira' => 'token',
+        ],
+    ],
+];

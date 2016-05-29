@@ -2,6 +2,7 @@
 
 namespace App\Pipeline;
 
+use App\Validator\Slack\ValidateSlackToken;
 use App\Validator\ValidateBody;
 use Interop\Container\ContainerInterface;
 use Zend\Stratigility\MiddlewarePipe;
@@ -12,6 +13,7 @@ class SlackJiraPipeline
     {
         $pipeline = new MiddlewarePipe();
         $pipeline->pipe($container->get(ValidateBody::class));
+        $pipeline->pipe($container->get(ValidateSlackToken::class));
 
         return $pipeline;
     }

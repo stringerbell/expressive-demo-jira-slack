@@ -1,5 +1,7 @@
 <?php
 use App\Pipeline\SlackJiraPipeline;
+use App\Validator\Slack\ValidateSlackToken;
+use App\Validator\Slack\ValidateSlackTokenFactory;
 use App\Validator\ValidateBody;
 use Zend\Expressive\Application;
 use Zend\Expressive\Container\ApplicationFactory;
@@ -20,9 +22,10 @@ return [
         ],
         // Use 'factories' for services provided by callbacks/factory classes.
         'factories'  => [
-            Application::class       => ApplicationFactory::class,
-            Helper\UrlHelper::class  => Helper\UrlHelperFactory::class,
-            SlackJiraPipeline::class => SlackJiraPipeline::class,
+            Application::class        => ApplicationFactory::class,
+            Helper\UrlHelper::class   => Helper\UrlHelperFactory::class,
+            SlackJiraPipeline::class  => SlackJiraPipeline::class,
+            ValidateSlackToken::class => ValidateSlackTokenFactory::class,
         ],
     ],
 ];
