@@ -1,3 +1,5 @@
+[Read a walkthrough of how I built this project here](http://dannstockton.com/building-slack-slash-commands-for-fun-and-profit/)
+
 # Expressive Skeleton and Installer
 
 [![Build Status](https://secure.travis-ci.org/zendframework/zend-expressive-skeleton.svg?branch=master)](https://secure.travis-ci.org/zendframework/zend-expressive-skeleton)
